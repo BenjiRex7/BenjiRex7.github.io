@@ -1,0 +1,51 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('BG.png'); /* Background image for the whole page */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+}
+
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Responsive columns */
+    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));    /* Responsive rows */
+    gap: 15px; /* Increased space between buttons */
+    width: 90vw; /* Width of the grid */
+    max-width: 600px; /* Maximum width for larger screens */
+}
+
+.circle-button {
+    background-color: #007BFF; /* Initial blue color */
+    color: white;
+    border: none;
+    border-radius: 30%; /* Makes the button circular */
+    width: 80px; /* Width of the button */
+    height: 80px; /* Height of the button */
+    font-size: 24px; /* Font size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.circle-button.active {
+    background-color: #FFA500; /* Orange color when active */
+}
+
+/* Media query for larger screens */
+@media (min-width: 600px) {
+    .button-grid {
+        gap: 50px; /* More space between buttons on larger screens */
+    }
+
+    .circle-button {
+        width: 100px; /* Width of the button */
+        height: 100px; /* Height of the button */
+        font-size: 28px; /* Font size */
+    }
+}
