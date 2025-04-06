@@ -9,16 +9,16 @@ body {
     background-image: url('BG.png'); /* Background image for the whole page */
     background-size: cover; /* Ensures the image covers the entire page */
     background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
 }
-
 
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Responsive columns */
-    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));    /* Responsive rows */
-    gap: 15px; /* Increased space between buttons */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+    grid-template-rows: repeat(6, 1fr);    /* 6 rows for larger screens */
+    gap: 25px; /* Space between buttons */
     width: 90vw; /* Width of the grid */
-    max-width: 600px; /* Maximum width for larger screens */
+    max-width: 800px; /* Maximum width for larger screens */
 }
 
 .circle-button {
@@ -26,8 +26,8 @@ body {
     color: white;
     border: none;
     border-radius: 30%; /* Makes the button circular */
-    width: 80px; /* Width of the button */
-    height: 80px; /* Height of the button */
+    width: 100px; /* Width of the button */
+    height: 100px; /* Height of the button */
     font-size: 24px; /* Font size */
     cursor: pointer;
     transition: background-color 0.3s;
@@ -37,15 +37,16 @@ body {
     background-color: #FFA500; /* Orange color when active */
 }
 
-/* Media query for larger screens */
-@media (min-width: 600px) {
+/* Media query for smaller screens */
+@media (max-width: 600px) {
     .button-grid {
-        gap: 50px; /* More space between buttons on larger screens */
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+        grid-template-rows: repeat(8, 1fr);    /* 8 rows for smaller screens */
     }
 
     .circle-button {
-        width: 100px; /* Width of the button */
-        height: 100px; /* Height of the button */
-        font-size: 28px; /* Font size */
+        width: 80px; /* Adjusted width for smaller screens */
+        height: 70px; /* Adjusted height for smaller screens */
+        font-size: 20px; /* Adjusted font size for smaller screens */
     }
 }
